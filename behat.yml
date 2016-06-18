@@ -1,0 +1,10 @@
+default:
+    suites:
+        default:
+            contexts:
+                - FeatureContext:
+                    kernel: '@http_kernel'
+                    manager: '@doctrine.orm.default_entity_manager'
+                    router: '@router'
+    extensions:
+        Behat\Symfony2Extension: ~
