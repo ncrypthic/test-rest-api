@@ -1,0 +1,85 @@
+<?php
+
+namespace Synergy\FacilityInformationDatabaseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Equipments
+ *
+ * @ORM\Table(name="equipments", indexes={@ORM\Index(name="fk_equipments_drawings1_idx", columns={"drawings_id"})})
+ * @ORM\Entity
+ */
+class Equipments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=true)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     */
+    private $path;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=255, nullable=false)
+     */
+    private $createdBy;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=false)
+     */
+    private $createdAt;
+
+    /**
+     * @var \Drawings
+     *
+     * @ORM\ManyToOne(targetEntity="Drawings")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="drawings_id", referencedColumnName="id")
+     * })
+     */
+    private $drawings;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Property", inversedBy="equipments")
+     * @ORM\JoinTable(name="detail_equipment_properties",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="equipments_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="property_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $property;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->property = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

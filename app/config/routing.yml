@@ -1,0 +1,5 @@
+lla_api:
+    resource: "@LLARestApiBundle/Resources/config/routing.xml"
+    prefix:   /api
+    type: rest
+

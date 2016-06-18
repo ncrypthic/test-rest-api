@@ -1,0 +1,20 @@
+body {
+    background-color: transparent;
+}
+
+#tools_left {
+    background-color: transparent;
+}
+
+
+#tool_preview, #tool_preview .svg_icon {
+    width: 38px;
+}
+
+#main_button {
+    display: none;
+}
+
+#tools_top {
+    left: 0;
+}

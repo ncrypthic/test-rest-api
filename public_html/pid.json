@@ -1,0 +1,225 @@
+{
+    "client": "Company XYZ",
+    "id_user": "1",
+    "worksites": [
+        {
+            "name": "Worksite A",
+            "facilities": [
+                {
+                    "name": "Facility A1",
+                    "drawings": [
+                        {
+                            "name": "DrwFc A1 A",
+                            "background_image": "facilityA1A.png",
+                            "equipments": [
+                                {
+                                    "id": "PipePlanA1A_01",
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "asd.com",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "properties": [
+                                        {
+                                            "name": "Pipe Length",
+                                            "value": "120M"
+                                        },
+                                        {
+                                            "name": "Pipe Diameter",
+                                            "value": "12M"
+                                        },
+                                        {
+                                            "name": "Pipe Volume",
+                                            "value": "12bbl"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "PipePlanA1A_02",
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "oaoaoa.com",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "properties": [
+                                        {
+                                            "name": "Pipe Length",
+                                            "value": "999M"
+                                        },
+                                        {
+                                            "name": "Pipe Diameter",
+                                            "value": "99M"
+                                        },
+                                        {
+                                            "name": "Pipe Volume",
+                                            "value": "9bbl"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "VesselPlanA1A_01",
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "lalala.com",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "properties": [
+                                        {
+                                            "name": "Vessel Volume",
+                                            "value": "120bbl"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "DrawFc A1 B",
+                            "background_image": "facilityA1B.png",
+                            "equipment": [
+                                {
+                                    "id": "VesselPlanA1B_01",
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "lalala.com",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "properties": [
+                                        {
+                                            "name": "Vessel Volume",
+                                            "value": "120bbl"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Facility A2",
+                    "drawings": [
+                        {
+                            "name": "DrawFc A2 A",
+                            "background_image": "facilityA2A.png",
+                            "equipments": [
+                                {
+                                    "id": "VesselPlanA1A_01",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "lalala.com",
+                                    "properties": [
+                                        {
+                                            "name": "Pipe Length",
+                                            "value": "200M"
+                                        },
+                                        {
+                                            "name": "Pipe Diameter",
+                                            "value": "20M"
+                                        },
+                                        {
+                                            "name": "Pipe Volume",
+                                            "value": "5bbl"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "DrawFc A2 B",
+                            "background_image": "facilityA2B.png",
+                            "equipments": [
+                                {
+                                    "id": "PipePlanA2B_01",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "lalala.com",
+                                    "properties": [
+                                        {
+                                            "name": "Pipe Length",
+                                            "value": "120M"
+                                        },
+                                        {
+                                            "name": "Pipe Diameter",
+                                            "value": "30M"
+                                        },
+                                        {
+                                            "name": "Pipe Volume",
+                                            "value": "90bbl"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Worksite B",
+            "facilities": [
+                {
+                    "name": "Facility B1",
+                    "drawings": [
+                        {
+                            "name": "DrawFc B1 A",
+                            "background_image": "facilityB1A.png",
+                            "equipments": [
+                                {
+                                    "id": "PipelPlanB1A_01",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "lalala.com",
+                                    "properties": [
+                                        {
+                                            "name": "Vessel Volume",
+                                            "value": "510bbl"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "DrawFc B1 B",
+                            "background_image": "facilityB1B.png",
+                            "equipments": [
+                                {
+                                    "id": "PipelPlanB1B_01",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "lalala.com",
+                                    "properties": [
+                                        {
+                                            "name": "Vessel Volume",
+                                            "value": "52bbl"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "VessellPlanB1B_01",
+                                    "category": {
+                                        "name": "Process"
+                                    },
+                                    "blob": "xxxxxxxxxx",
+                                    "url": "lalala.com",
+                                    "properties": [
+                                        {
+                                            "name": "Vessel Volume",
+                                            "value": "52bbl"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

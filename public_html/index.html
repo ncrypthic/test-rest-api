@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="vendor/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+        <link rel="stylesheet" href="vendor/jqwidgets/jqwidgets/styles/jqx.office.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <script data-main="config/app" src="vendor/requirejs/require.js"></script>
+    </head>
+    
+    <body style="margin: 0; padding: 0; overflow: hidden;">
+        <div id="wrapper">
+            <!--autoHideGroup-->
+            <div data-container="facility-panel">
+                <div data-bind="event: worksites.event, jqxTree: { source: worksites.source, disabled: worksites.disabled }" class="side"></div>
+            </div>
+            <div data-container="list-panel">
+                <div data-bind="jqxTree: { source: worksites.source, disabled: worksites.disabled }" class="side"></div>
+            </div>
+            <div data-container="pid-panel">
+                <div style="" data-bind="jqxTree: { source: worksites.source, disabled: worksites.disabled }" class="side"></div>
+            </div>
+            <div data-container="ContainerList">
+                <div style="" data-bind="event: categories.event, jqxTree: { source: categories.source, disabled: categories.disabled }" class="side"></div>    
+            </div>  
+            <!-- documentGroup -->
+            <div data-container="editor-panel">
+                <div id="main-content-placeholder"></div>
+            </div>
+            <!--right tabbedGroup-->
+            <div data-container="preview-panel">
+                <iframe id="preview-content" style="height: 94%; width: 98%; align-content: center" frameborder="0" allowfullscreen data-bind="attr:{ src: selected_equipment.url }"></iframe>
+                <h5 data-bind="text: selected_equipment.path"></h5>
+            </div>
+            <div data-container="properties-panel">
+                <table style="width: 100%" id="PropertiesTable">
+                    <thead>
+                        <tr>
+                            <th>Property Name</th>
+                            <th>Property Value</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: selected_equipment.properties">
+                        <tr>
+                            <td data-bind="text: name"></td>
+                            <td><input type="text" data-bind="value: value" /></td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="main-content-panel">
+            <div id="tabs">
+                <ul>
+                    <li>New Document</li>
+                </ul>
+                <div></div>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="worksite-context-menu">
+                <ul>
+                    <li>Edit Worksite</li>
+                    <li>Remove Worksite</li>
+                    <li type="separator"></li>
+                    <li>Add Facility</li>
+                </ul>
+            </div>
+            <div id="facility-context-menu">
+                <ul>
+                    <li>Edit Facility</li>
+                    <li>Remove Facility</li>
+                    <li type="separator"></li>
+                    <li>Add Drawing</li>
+                </ul>
+            </div>
+            <div id="drawing-context-menu">
+                <ul>
+                    <li data-bind="click: worksites.editDrawing">Edit Drawing</li>
+                    <li data-bind="click: worksites.removeDrawing">Remove Drawing</li>
+                </ul>
+            </div>
+            <div id="confirm-window">
+                <div><h4 data-bind="text: dialog.title"></h4></div>
+                <div>
+                    <div data-bind="html: dialog.content"></div>
+                    <button type="button" class="cancel-btn" data-bind="click: dialog.cancel">Cancel</button>
+                    <button type="button" class="ok-btn" data-bind="click: dialog.ok">Remove</button>
+                </div>
+            </div>
+            <script type="text/html" id="worksite-modal">
+
+            </script>
+            <script type="text/html" id="facility-modal">
+
+            </script>
+            <script type="text/html" id="drawing-modal">
+                <div><h4>Edit Drawing</h4></div>
+                <div>
+                    <div>
+                    Name <input type="text" data-bind="value: drawing.name"/>
+                    </div>
+                    <div>
+                    Background Image
+                    <hr/>
+                    <img data-bind="attr: {src: drawing.background_image}" />
+                    New Image <input type="file" value=""/>
+                    </div>
+                </div>
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "FID",
+  "version": "0.0.1",
+  "description": "Facility database frontend",
+  "main": "config/app.js",
+  "authors": [
+    "Lim Afriyadi<lim.afriyadi@ptsynergy.co.id>"
+  ],
+  "license": "Proprietary",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

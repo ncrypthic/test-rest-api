@@ -1,0 +1,77 @@
+<?php
+
+namespace Synergy\FacilityInformationDatabaseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Drawings
+ *
+ * @ORM\Table(name="drawings", indexes={@ORM\Index(name="fk_drawings_facilities1_idx", columns={"facilities_id"})})
+ * @ORM\Entity
+ */
+class Drawings
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="background_image", type="string", length=255, nullable=false)
+     */
+    private $backgroundImage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="created_by", type="string", length=255, nullable=false)
+     */
+    private $createdBy;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=false)
+     */
+    private $createdAt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="updated_by", type="string", length=255, nullable=true)
+     */
+    private $updatedBy;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
+     * @var \Facilities
+     *
+     * @ORM\ManyToOne(targetEntity="Facilities")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="facilities_id", referencedColumnName="id")
+     * })
+     */
+    private $facilities;
+
+
+}
