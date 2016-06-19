@@ -24,6 +24,8 @@ class ProductController extends FOSRestController
      * @Rest\QueryParam(name="colors", requirements="[0-9\.]+", nullable=true)
      * @Rest\QueryParam(name="min", requirements="[0-9]+", nullable=true)
      * @Rest\QueryParam(name="max", requirements="[0-9]+", nullable=true)
+     * @Rest\QueryParam(name="limit", requirements="[0-9]+", nullable=true, default=10)
+     * @Rest\QueryParam(name="offset", requirements="[0-9]+", nullable=true, default=0)
      * @Rest\View(serializerGroups={"product"})
      * @todo Implement pagination
      * 
@@ -37,6 +39,8 @@ class ProductController extends FOSRestController
         $sizes    = array();
         $colors   = array();
         $minPrice = 0;$maxPrice = 99999999;
+        $limit    = $fetcher->get('limit');
+        $offset   = $fetcher->get('offset');
         if($fetcher->get('sizes')) {
             $sizes = explode(',', $fetcher->get('sizes'));
         }
@@ -51,7 +55,8 @@ class ProductController extends FOSRestController
         }
         
         return $em->getRepository('LLARestApiBundle:Product')
-                ->findByFilter($category, $sizes, $colors, $minPrice, $maxPrice);
+                ->findByFilter($category, $sizes, $colors, $minPrice, $maxPrice,
+                        $limit, $offset);
     }
     
     /**
@@ -61,6 +66,8 @@ class ProductController extends FOSRestController
      * @Rest\QueryParam(name="colors", requirements="[a-zA-Z0-9\.,\#]+", nullable=true)
      * @Rest\QueryParam(name="min", requirements="[0-9]+", nullable=true)
      * @Rest\QueryParam(name="max", requirements="[0-9]+", nullable=true)
+     * @Rest\QueryParam(name="limit", requirements="[0-9]+", nullable=true, default=10)
+     * @Rest\QueryParam(name="offset", requirements="[0-9]+", nullable=true, default=0)
      * @Rest\View(serializerGroups={"product"})
      * 
      * @return \Doctrine\Common\Collections\Collection
@@ -71,6 +78,8 @@ class ProductController extends FOSRestController
         $sizes  = array();
         $colors = array();
         $minPrice = 0;$maxPrice = 99999999;
+        $limit    = $fetcher->get('limit');
+        $offset   = $fetcher->get('offset');
         if($fetcher->get('sizes')) {
             $sizes = explode(',', $fetcher->get('sizes'));
         }
@@ -85,7 +94,8 @@ class ProductController extends FOSRestController
         }
 
         return $em->getRepository('LLARestApiBundle:Product')
-                ->findByFilter(null, $sizes, $colors, $minPrice, $maxPrice);
+                ->findByFilter(null, $sizes, $colors, $minPrice, $maxPrice,
+                        $limit, $offset);
     }
     
     /**

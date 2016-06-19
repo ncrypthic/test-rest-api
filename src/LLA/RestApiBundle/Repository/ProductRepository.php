@@ -21,7 +21,7 @@ class ProductRepository extends EntityRepository
 {
     public function findByFilter(Category $category = null, 
             array $sizes = array(), array $colors = array(), 
-            $minPrice = 0, $maxPrice = 0)
+            $minPrice = 0, $maxPrice = 0, $limit = 10, $offset = 0)
     {
         $qb = $this->createQueryBuilder('product');
         $this->filterCategory($qb, $category)
